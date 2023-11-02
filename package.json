@@ -45,6 +45,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
+<<<<<<< HEAD
   ]
 
+=======
+  ],
+  "proxy": "https://transfer.sh"
+>>>>>>> origin/master
 }

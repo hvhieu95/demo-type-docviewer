@@ -4,25 +4,41 @@
 }
 .viewer-with-draggable {
   display: flex;
+<<<<<<< HEAD
   height: 1000vh;
 
 
 }
 .editor {
+=======
+  height: 300vh;
+
+
+}
+.left-panel {
+>>>>>>> origin/master
   flex: 20%;
 
 }
 
+<<<<<<< HEAD
 .canvas {
+=======
+.right-panel {
+>>>>>>> origin/master
   flex: 80%;
   display: flex;
   flex-direction: column;
   height: 100%;
 
 }
+<<<<<<< HEAD
 .file-viewer {
   height: 100%;
 }
+=======
+
+>>>>>>> origin/master
 .button-save,
 .button-backhome {
   display: flex;

@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useParams } from "react-router-dom";
+<<<<<<< HEAD
 import { DocumentType } from "../documents";
+=======
+import {DocumentType}  from "../documents";
+>>>>>>> origin/master
 import Content from "../component/Content";
 import { useDocuments } from "../DocumentContext";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +18,10 @@ export type ShapeType = {
   text: string;
 };
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 interface DocumentViewerProps {
   updateDocumentsState?: (updatedDocuments: DocumentType[]) => void;
 }
@@ -76,6 +84,34 @@ const DocumentViewer = ({ updateDocumentsState }: DocumentViewerProps) => {
     setGlobalDocuments,
   ]);
 
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+    const updateViewerHeight = () => {
+      if (docViewerRef.current) {
+        const documentHeight = docViewerRef.current.scrollHeight;
+        switch (document?.fileType) {
+          case "pdf":
+            setViewerHeight(`${documentHeight}px`);
+            break;
+          case "xlsx":
+          case "docx":
+          case "ppt":
+            setViewerHeight("500vh");
+            break;
+          default:
+            break;
+        }
+      }
+    };
+    updateViewerHeight();
+    window.addEventListener("resize", updateViewerHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateViewerHeight);
+    };
+  }, [document]);
+>>>>>>> origin/master
 
   if (!document) {
     return <div>Không tìm thấy tài liệu</div>;
@@ -85,6 +121,7 @@ const DocumentViewer = ({ updateDocumentsState }: DocumentViewerProps) => {
     navigate(-1);
   };
 
+<<<<<<< HEAD
   return (
     <>
       <div className={`viewer-with-draggable ${document.fileType}`}>
@@ -93,6 +130,18 @@ const DocumentViewer = ({ updateDocumentsState }: DocumentViewerProps) => {
         </div>
 
         <div className="editor">
+=======
+
+
+  return (
+    <>
+      <div className={`viewer-with-draggable ${document.fileType}`}>
+        <div className="right-panel">
+          <FileViewer document={document} />\
+        </div>
+
+        <div className="left-panel">
+>>>>>>> origin/master
           <ShapesEditor shapes={shapes} setShapes={setShapes} />
 
           <Content
